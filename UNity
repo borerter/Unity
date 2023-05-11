@@ -1,0 +1,45 @@
+Vector3 mousepos = MainCam.ScreenToWorldPoint(Input.mousePosition);
+bunu mouse drag içine yazıcaz: MainCam başta Camera Main olarak alman gerekiyor.
+
+
+
+if (womantime > womantimestart)
+        {
+            womantimestart += Time.deltaTime;
+            womantext.text = womantimestart.ToString("0.0");
+        }
+        
+Womentimestrat = 0'a eşit gittikçe artıyor 0'dan bilmem kaça artış gibi düşün. womwntime ise random zaten atanmış olucak
+Random.Range ile random sayı generate edebiliyosun ama library eklemeyi unutma
+
+
+   IEnumerator WaitForWoman()
+    {
+        womantime = Random.Range(2, 5);
+        womantimeint = Convert.ToInt32(womantime);
+        womanvalues.Add(womantimeint);
+        yield return new WaitForSeconds(womantime);
+        woman.Play("womanup1");
+    }
+  Beklemeli şey kurmak için IEnumarator olan fonk yazıyosun sonra onu StartCoroutine ile çağırcan 
+  
+
+
+this.GetComponent<Rigidbody>().AddForce(new Vector3(-5f, 0, 0)) (sağa sola hareket sanırım bu sola hareket)
+oka basınca obje ilerlesin olayı tabi bunu if içinde yazcan o componente add force yapıyosun add force vector 3 alıyo hangi eksende gitsin istiyosan ona göre vector veriyosun iste
+
+else if(isGrounded && Input.GetKey(KeyCode.Space))
+        {
+            this.GetComponent<Rigidbody>().AddForce(new Vector3(0, 500f, 0));
+            isGrounded = false;
+        }
+Double jump'ı engellemek için isgrounded kullandık. bi de space e basınca zıplasın olayı falan
+
+
+
+ GameObject bulletclone = Instantiate(bullet, atisnoktasi.transform.position, Quaternion.identity);
+ 
+ aynı objeden biri duruken bi tane daha yapmak istiyosam bunu kullancam 
+Quaterninon çevirmeyle ilgili pek emin olmamamkla birlikte aynı alsın istiyosam identity diye bıraabilirim ama döndürme işine girceksem Quaternion.Euler(0,0,-90) => euler ile vektçr vericem nasıl nerede döndürcem falan
+
+sin cos kullanıyosam Deg2Rad kullanmayı unutma
